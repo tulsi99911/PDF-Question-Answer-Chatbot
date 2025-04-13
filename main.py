@@ -29,7 +29,7 @@ if not groq_api_key or not hf_token:
     st.stop()
 
 # === Embeddings & LLM setup ===
-embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2", model_kwargs={"device": "cpu"})
 llm = ChatGroq(groq_api_key=groq_api_key, model_name="llama3-70b-8192")
 
 # === Chat history memory ===
