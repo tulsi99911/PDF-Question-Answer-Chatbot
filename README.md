@@ -1,15 +1,14 @@
 # PDF Question-Answer Chatbot
-A Streamlit-based application that allows users to upload PDF documents and ask questions about their content. The chatbot leverages LangChain, FAISS, Hugging Face Embeddings, 
-GROQ LLM and RAG (Retrieval Augmented Generation) to provide accurate answers based on the document content.
+The Project provides a comprehensive Streamlit-based(UI) application that enables users to seamlessly upload PDF documents and interact with their content through intuitive question-answering capabilities. This intelligent chatbot leverages LangChain, FAISS, Hugging Face Embeddings, GROQ LLM, and RAG (Retrieval Augmented Generation) to deliver precise, context-aware answers derived directly from the uploaded document content.
 
 ## Project Structure
 PDF-Question-Answer-Chatbot/
-├── .gitignore
-├── chatbot.ipynb             # Step-by-step notebook version of the chatbot
-├── main.py                   # Production-ready Streamlit app
-├── requirements.txt          # Project dependencies
-├── README.md                 # Project documentation
-└── pdfenv/                   # Conda environment folder (ignored by git)
+   1) ├── .gitignore
+   2) ├── chatbot.ipynb             # Step-by-step notebook version of the chatbot
+   3) ├── main.py                   # Production-ready Streamlit app
+   4) ├── requirements.txt          # Project dependencies
+   5) ├── README.md                 # Project documentation
+   6) └── pdfenv/                   # Conda environment folder (ignored by git)
 
 ## Features
    1) Upload multiple PDF files simultaneously
