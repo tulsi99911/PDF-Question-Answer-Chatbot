@@ -16,11 +16,11 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader
 
 # Load API keys
-# load_dotenv()
-# groq_api_key = os.getenv("GROQ_API_KEY")
-# hf_token = os.getenv("HF_TOKEN")
-groq_api_key = st.secrets.get("GROQ_API_KEY")
-hf_token = st.secrets.get("HF_TOKEN")
+load_dotenv()
+groq_api_key = os.getenv("GROQ_API_KEY")
+hf_token = os.getenv("HF_TOKEN")
+# groq_api_key = st.secrets.get("GROQ_API_KEY")
+# hf_token = st.secrets.get("HF_TOKEN")
 os.environ["HF_TOKEN"] = hf_token
 
 # === Validate keys ===
@@ -29,7 +29,7 @@ if not groq_api_key or not hf_token:
     st.stop()
 
 # === Embeddings & LLM setup ===
-embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2", model_kwargs={"device": "cpu"})
+embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 llm = ChatGroq(groq_api_key=groq_api_key, model_name="llama3-70b-8192")
 
 # === Chat history memory ===
