@@ -16,17 +16,17 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader
 
 # Load API keys
-load_dotenv()
-groq_api_key = os.getenv("GROQ_API_KEY")
-hf_token = os.getenv("HF_TOKEN")
-# groq_api_key = st.secrets.get("GROQ_API_KEY")
-# hf_token = st.secrets.get("HF_TOKEN")
-os.environ["HF_TOKEN"] = hf_token
+# load_dotenv()
+# groq_api_key = os.getenv("GROQ_API_KEY")
+# hf_token = os.getenv("HF_TOKEN")
+groq_api_key = st.secrets.get("GROQ_API_KEY")
+hf_token = st.secrets.get("HF_TOKEN")
 
 # === Validate keys ===
 if not groq_api_key or not hf_token:
     st.error("Missing API keys. Please add GROQ_API_KEY and HF_TOKEN to your .env.")
     st.stop()
+os.environ["HF_TOKEN"] = hf_token
 
 # === Embeddings & LLM setup ===
 embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
