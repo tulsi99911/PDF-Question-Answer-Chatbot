@@ -16,9 +16,11 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader
 
 # Load API keys
-load_dotenv()
-groq_api_key = os.getenv("GROQ_API_KEY")
-hf_token = os.getenv("HF_TOKEN")
+# load_dotenv()
+# groq_api_key = os.getenv("GROQ_API_KEY")
+# hf_token = os.getenv("HF_TOKEN")
+groq_api_key = st.secrets.get("GROQ_API_KEY")
+hf_token = st.secrets.get("HF_TOKEN")
 os.environ["HF_TOKEN"] = hf_token
 
 # === Validate keys ===
